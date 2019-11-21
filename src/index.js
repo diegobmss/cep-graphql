@@ -1,5 +1,5 @@
-const { ApolloServer, gql } = require('apollo-server');
-const resolvers = require('./resolvers');
+import { ApolloServer, gql } from 'apollo-server';
+import resolvers from './resolvers';
 
 const server = new ApolloServer({
   typeDefs: gql`
@@ -23,6 +23,6 @@ const server = new ApolloServer({
   resolvers
 });
 
-server.listen().then(({ url }) => {
+server.listen(process.env.PORT || 4000).then(({ url }) => {
   console.log(`Executando em ${url}`);
 });
