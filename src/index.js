@@ -1,5 +1,5 @@
-import { ApolloServer, gql } from 'apollo-server';
-import resolvers from './resolvers';
+const { ApolloServer, gql } = require('apollo-server');
+const resolvers = require('./resolvers');
 
 const server = new ApolloServer({
   typeDefs: gql`
