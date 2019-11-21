@@ -20,7 +20,9 @@ const server = new ApolloServer({
       cep(cep: String!): Cep
     }
   `,
-  resolvers
+  resolvers,
+  introspection: true,
+  playground: true,
 });
 
 server.listen(process.env.PORT || 4000).then(({ url }) => {
